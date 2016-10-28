@@ -59,6 +59,8 @@
 	<div class="page-group">
 		<div id="resouceInfo" class="page">
 			<input id="fileServer" type="hidden" value="${fileServer }">
+			<input id="ilmid" type="hidden" value="${entity.lmid}">
+			
 			<header class="bar bar-nav header_bg">
 				<a class="button button-link button-nav pull-left back"> <span
 					class="icon icon-left col_w"></span> <!--返回-->

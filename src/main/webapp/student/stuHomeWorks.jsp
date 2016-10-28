@@ -23,7 +23,7 @@
 				{{ for( var bean in it) { }} 
 				<ul>
 					<li>
-						<a class="external" href="${ctx}/work/student/workInfo?studentId=${studentId}&homeworkid={{=it[bean].homeworkid}}">
+						<a href="${ctx}/work/student/workInfo?studentId=${studentId}&homeworkid={{=it[bean].homeworkid}}">
 							<div class="item-content">
 								<div class="item-media">
 									<img src="${ctx }/image/03.png">

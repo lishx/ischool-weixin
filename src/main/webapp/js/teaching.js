@@ -209,6 +209,39 @@ $(function() {
 		});
 
 	});
+	$(document).on('pageInit', '#stuworkinfo', function(e, id, page) {
+		var protpl ='<div id="pro{pid}" class="progress-bar item-inner" >'+
+        '<span id="show-filename">{filename}</span>'+
+        '<span class="del">'+
+        	'<a class="external" id="d{pid}" href="${fileServer}/index/downloadFile?fileId={fileId}">下载</a>'+
+        '</span>'+
+    '</div>';
+    var path = $("#fileServer").val();
+    var homeworkid = $("#homeworkid").val();
+    $.ajax({
+    	url:path+'/index/batchBusinessFileMsg',
+    	data:{
+    		systemCode:"ischool",
+    		businessKeys:'work'+homeworkid
+    	},
+    	success:function(data){
+    		var $div = $("#flielist");
+    		$div.html("");
+    	//	console.log(data)
+    		var html = "";
+    		for(var i in data){
+    			//console.log(data[i])
+    			html += protpl.replace("{filename}",data[i].fileName)
+    			.replace("{fileId}",data[i].fileId).replace(/{pid}/g,i);
+				
+    		}
+    		$div.append(html)
+    	}
+    })
+
+	});
+	
+	
 	//老师作业列表
 	$(document).on('pageInit', '#workListpage', function(e, id, page) {
 		loadWorkListData();
@@ -314,11 +347,12 @@ $(function() {
 	        '</span>'+
 	    '</div>';
 		var path = $("#fileServer").val();
+		var ilmid = $("#ilmid").val();
 	    $.ajax({
 	    	url:path+'/index/batchBusinessFileMsg',
 	    	data:{
 	    		systemCode:"ischool",
-	    		businessKeys:'material'+"${entity.lmid}"
+	    		businessKeys:'material'+ilmid
 	    	},
 	    	success:function(data){
 	    		var $div = $("#flielist");

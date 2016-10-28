@@ -22,7 +22,10 @@
 </head>
 <body>
 	<div class="page-group">
-		<div id="addexam" class="page">
+		<div id="stuworkinfo" class="page">
+			<input id="fileServer" type="hidden" value="${fileServer }" />
+			<input id="homeworkid" type="hidden" value="${entity.homeworkid }" />
+			
 			<header class="bar bar-nav header_bg"> <a
 				class="button button-link button-nav pull-left back"> <span
 				class="icon icon-left col_w"></span> <!--返回-->
@@ -123,7 +126,7 @@
 	//http://121.40.127.79:8082/upsoft-files/batchBusinessFileMsg 文件列表 
 		var path ='${fileServer}'; 	
 		$(function(){
-			var count =0;// role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+			//var count =0;// role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
 			var protpl ='<div id="pro{pid}" class="progress-bar item-inner" >'+
 		        '<span id="show-filename">{filename}</span>'+
 		        '<span class="del">'+
@@ -134,8 +137,8 @@
 		    $.ajax({
 		    	url:path+'/index/batchBusinessFileMsg',
 		    	data:{
-		    		systemCode:"ischool-weixin",
-		    		businessKeys:'homework_'+"${entity.homeworkid}"
+		    		systemCode:"ischool",
+		    		businessKeys:'work'+"${entity.homeworkid}"
 		    	},
 		    	success:function(data){
 		    		var $div = $("#flielist");

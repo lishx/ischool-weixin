@@ -176,10 +176,10 @@ public class IscHomeworkController {
 	@RequestMapping("/student/workInfo")
 	public String getworkInfo(Integer homeworkid,Integer studentId,Model model){
 		try {
-			Map<String, Object> findBaseUserInfo = iscSchoolUserService.findBaseUserInfo(studentId);
-			if(null != findBaseUserInfo){
-				Object object1 = findBaseUserInfo.get("userid");
-				Map<String, Object> map = iscHomeworkService.queryHomeWorkById(homeworkid, Integer.valueOf(object1.toString()));
+			//Map<String, Object> findBaseUserInfo = iscSchoolUserService.findBaseUserInfo(studentId);
+			//if(null != findBaseUserInfo){
+				//Object object1 = findBaseUserInfo.get("userid");
+				Map<String, Object> map = iscHomeworkService.queryHomeWorkById(homeworkid, studentId);
 				
 				long createtime =Long.parseLong(map.get("createtime").toString()) ;
 				SimpleDateFormat sft = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -205,7 +205,7 @@ public class IscHomeworkController {
 					map.put("correcttime", format2);
 				}
 				model.addAttribute("entity",map);
-			}	
+		//	}	
 			
 			model.addAttribute("fileServer", Config.getProperty("file_server_url"));
 			return "student/stuHomeWorkInfo";

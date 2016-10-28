@@ -36,7 +36,7 @@
 								</div>
 								<div class="item-inner">
 									<div class="item-title-row">
-										<div class="item-title col_66">{{=it[bean].year}}【{{=it[bean].subname}}】</div>
+										<div class="item-title col_66">{{=it[bean].subname}}</div>
 									</div>
 									<div class="item-subtitle col_83">
 										<span>考试时间:</span><span>{{=it[bean].examtime}}</span>
@@ -52,7 +52,7 @@
 				{{ for( var bean in it) { }} 
 				<ul>
 					<li>
-						<a class="external" href="${ctx}/work/student/workInfo?studentId={{=it[bean].studentid}}&homeworkid={{=it[bean].homeworkid}}">
+						<a  href="${ctx}/work/student/workInfo?studentId={{=it[bean].studentid}}&homeworkid={{=it[bean].homeworkid}}">
 							<div class="item-content">
 								<div class="item-media">
 									<img src="${ctx }/image/03.png">
