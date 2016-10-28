@@ -1,0 +1,86 @@
+/*全局*/
+.header_bg{background-color:#3077B9!important;}
+.col_w{ color:#FFFFFF!important;}
+.bg_w{ background-color: #FFFFFF!important;}
+.col_4d{color: #4D4D4D!important;}
+.col_cc{color: #CCCCCC!important;}
+.col_83{color: #838383!important;}
+.col_99{color: #999999!important;}
+.col_66{color: #666666!important;}
+.col_00{color: #000000!important;}
+.fs_6{font-size: .6rem!important;}
+.fs_75{font-size: .75rem!important;}
+.fs_875{font-size: .875rem!important;}
+.mg_0{ margin: 0!important;}
+.mgt_02{ margin-top: .2rem;}
+.mgt_05{ margin-top: .5rem;}
+.mgt_1{ margin-top: 1rem;}
+.mgt_15{ margin-top: 1.5rem;}
+.mgt_2{ margin-top: 2rem;}
+.mgt_25{ margin-top: 2.5rem;}
+.mgt_3{ margin-top: 3rem;}
+.pdr_025{ padding-right:.25rem ;}
+.pdr_05{ padding-right:.5rem ;}
+/*框架重写*/
+bar .icon {
+    line-height: 2.2rem;
+}
+.defi_content-padded{ padding: 0 .5rem;}
+.list_defi{margin: 0;}
+.list_defi ul{ margin-bottom: .5rem;}
+.dis_no ul{ margin-bottom: 0;}
+.list_defi ul:before{background-color: transparent;}
+.list_defi .item-media img{ width: 2.2rem; border-radius: 50%;}
+.list_defi .item-title{font-weight: normal!important; font-size: .75rem;}
+.list_defi .item-subtitle{ margin-top: .2rem; }
+.dis_no.media-list .item-inner{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-shrink: 0;
+	-ms-flex: 0 0 auto;
+	-webkit-flex-shrink: 0;
+	flex-shrink: 0;
+	-webkit-box-lines: single;
+	-moz-box-lines: single;
+	-webkit-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	box-sizing: border-box;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	padding-top: .35rem;
+	padding-bottom: .4rem;
+	text-align: center;
+}
+
+.defi_c{ width: 70%; margin: 0 auto;}
+.button{height: 2rem;}
+.button.button-fill{background-color: #3077B9; line-height: 2rem;}
+.list_defi textarea{ height: auto!important; padding-left: 0; font-size: .75rem;}
+/*三角形上*/
+.triangle_up {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 13px solid #CCCCCC;
+}
+/*三角形下*/
+.triangle_down {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 13px solid #CCCCCC;
+}
+
+.edt{ border: 0; outline: 0; font-size: .75rem;}
+.img_upload{ width: 4.5rem!important; border-radius: .2rem!important;}
+.defi_inp{ width: 100%; border: 0; outline: 0; height: auto!important; font-size: .75rem!important;}
+/*教务教学*/
+.img{width: 100%;display: block;}
+.barline_no:after{ background-color: transparent; height: 0;}
+.col_inner{width: 80%; box-sizing: border-box; display: block; margin: .3rem auto; background-color: #fff; padding: .5rem; border-radius: .5rem; text-align: center;}
+.col_inner img{max-width: 100%;}
+.col_inner p{ width: 100%; font-size: .75rem; color: #CCCCCC; padding: 0; margin: 0;}

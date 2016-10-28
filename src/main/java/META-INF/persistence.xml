@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="ischool-weixin">
+		<class>com.ischool.weixin.entity.IscAddress</class>
+		<class>com.ischool.weixin.entity.IscAttentionWeichat</class>
+		<class>com.ischool.weixin.entity.IscClass</class>
+		<class>com.ischool.weixin.entity.IscCollege</class>
+		<class>com.ischool.weixin.entity.IscCollegeMajor</class>
+		<class>com.ischool.weixin.entity.IscExam</class>
+		<class>com.ischool.weixin.entity.IscExamResult</class>
+		<class>com.ischool.weixin.entity.IscExpand</class>
+		<class>com.ischool.weixin.entity.IscHomework</class>
+		<class>com.ischool.weixin.entity.IscInvigilator</class>
+		<class>com.ischool.weixin.entity.IscLearningMaterial</class>
+		<class>com.ischool.weixin.entity.IscMajor</class>
+		<class>com.ischool.weixin.entity.IscSchedule</class>
+		<class>com.ischool.weixin.entity.IscSchool</class>
+		<class>com.ischool.weixin.entity.IscStudentHomework</class>
+		<class>com.ischool.weixin.entity.IscSubject</class>
+		<class>com.ischool.weixin.entity.SysUser</class>
+		<class>com.ischool.weixin.entity.IscSchoolUser</class>
+		<class>com.ischool.weixin.entity.IscSubjectClass</class>
+		<class>com.ischool.weixin.entity.IscTermSubject</class>
+		<class>com.ischool.weixin.entity.IscLessonSign</class>
+		<class>com.ischool.weixin.entity.IscLesson</class>
+	</persistence-unit>
+</persistence>
