@@ -33,7 +33,7 @@
 			     	 		<ul>
 							      <li>
 							      	<%-- <a href="${ctx }/tellmsg?scid=${bean.scid}&suid=${bean.suid}" > --%>
-							        <a href="${ctx }/resouce/student/tolist?lmtype=${lmtype }&scid=${bean.scid}" class="external">
+							        <a href="${ctx }/resouce/student/tolist?lmtype=${lmtype }&scid=${bean.scid}" >
 							        <div class="item-content">
 							          <div class="item-media"><img src="${ctx }/image/class.png"></div>
 							          <div class="item-inner">

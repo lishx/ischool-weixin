@@ -2,6 +2,7 @@ var exampageIndex = 0;
 var stuexampageIndex = 0;
 var workpageIndex=0;
 var signpageIndex=0;
+var resoucepageIndex = 0;
 var loading =false;
 function loadData(){
 	// 每次加载添加多少条目
@@ -139,7 +140,47 @@ function loadWorkListData(){
 		}
 	});
 }
+function loadResouceData() {
+	// 每次加载添加多少条目 
+	var pageSize = 7;
+	if (loading) {
+		return;
+	}
+	loading = true;
+	var scid = $("#scid").val();
+	var lmtype = $("#lmtype").val();
+	$
+			.ajax({
+				url : ctx + "/resouce/doList?pageSize=" + pageSize
+						+ "&pageIndex=" + resoucepageIndex + "&scid="
+						+ scid + "&lmtype=" + lmtype,
+				success : function(data) {
 
+					loading = false;
+					if (data && data.length) {
+						resoucepageIndex++;
+						// 删除加载提示符
+						$('.infinite-scroll-preloader').remove();
+						var evalText = doT.template($("#docSharingList").text());
+
+						$('#resouceListpage .list-block').append(
+								evalText(data))
+						// 更新最后加载的序号
+						lastIndex = $('#resouceListpage .list-block ul').length;
+						$.refreshScroller();
+					} else {
+						$('.infinite-scroll-preloader').remove();
+						if (resoucepageIndex < 1) {
+							$('#resouceListpage .list-block')
+									.html(
+											"<div style=\"text-align:center;\">暂无数据</div>");
+						}
+						// 加载完毕，则注销无限加载事件，以防不必要的加载
+						$.detachInfiniteScroll($('.infinite-scroll'));
+					}
+				}
+			});
+}
 
 
 $(function() {
@@ -231,6 +272,70 @@ $(function() {
 				$("#addformwork").submit();
 		})
 	});
+	
+	/*
+	 * 资源或者知识
+	 * */
+	$(document).on('pageInit','#resouceListpage', function (e, id, page) {
+		
+		loadResouceData();
+		$(page).on('infinite', function() {
+			loadResouceData();
+		});
+		
+		/*$(page).on("touchend",".leassonItem",function(){
+				var $this = $(this);
+				var uname = $this.text();
+				var uId = $this.attr("data-id");
+				$("#leassonName").text(uname);
+				$("#msId").val(uId);
+				$(".close-popup").click();
+				
+		});
+		
+		 $(page).on("touchend","#submit",function(){
+			 //examtime
+				var workinfo = $("#divworkinfo").text().trim();
+				$("#formworkinfo").val(workinfo);
+				$("#addformwork").submit();
+		})*/
+	});
+	
+	/*
+	 * 资源详情
+	 * */
+	$(document).on('pageInit','#resouceInfo', function (e, id, page) {
+		var count =0;// role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+		var protpl ='<div id="pro{pid}" class="progress-bar item-inner" >'+
+	        '<span id="show-filename">{filename}</span>'+
+	        '<span class="del">'+
+	        	// '<a  class="js_delFile" id="d{pid}" fileId="{fileId}" href="javascript:void(0);">删除</a>'+
+	        	'<a  class="external js_downFile" id="d{pid}" href="'+path+'/index/downloadFile?fileId={fileId}">下载</a>'+
+	        '</span>'+
+	    '</div>';
+		var path = $("#fileServer").val();
+	    $.ajax({
+	    	url:path+'/index/batchBusinessFileMsg',
+	    	data:{
+	    		systemCode:"ischool",
+	    		businessKeys:'material'+"${entity.lmid}"
+	    	},
+	    	success:function(data){
+	    		var $div = $("#flielist");
+	    		$div.html("");
+	    	//	console.log(data)
+	    		var html = "";
+	    		for(var i in data){
+	    			//console.log(data[i])
+	    			html += protpl.replace("{filename}",data[i].fileName)
+	    			.replace(/{fileId}/g,data[i].fileId).replace(/{pid}/g,i);
+					
+	    		}
+	    		$div.append(html)
+	    	}
+	    })
+	});
+	
 	
 	//学生签到信息查看
 	/*

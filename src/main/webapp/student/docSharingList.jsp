@@ -49,6 +49,9 @@
 <body>
 	<div class="page-group">
 		<div id="resouceListpage" class="page">
+			<input id="lmtype" type="hidden" value="${lmtype}">
+			<input id="scid" type="hidden" value="${scid}">
+			
 			<header class="bar bar-nav header_bg">
 				<a class="button button-link button-nav pull-left back"> <span
 					class="icon icon-left col_w"></span> <!--返回-->
@@ -68,7 +71,7 @@
 
 		</div>
 	</div>
-	<%-- <script type="text/javascript" src="${ctx }/js/teaching.js"></script> --%>
+	<script type="text/javascript" src="${ctx }/js/teaching.js"></script> 
 	<script type="text/javascript">
 		var ctx = "${ctx}";
 		var lmtype = '${lmtype}';

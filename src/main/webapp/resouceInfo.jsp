@@ -57,7 +57,8 @@
 </head>
 <body>
 	<div class="page-group">
-		<div id="addres" class="page">
+		<div id="resouceInfo" class="page">
+			<input id="fileServer" type="hidden" value="${fileServer }">
 			<header class="bar bar-nav header_bg">
 				<a class="button button-link button-nav pull-left back"> <span
 					class="icon icon-left col_w"></span> <!--返回-->
